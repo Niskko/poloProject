@@ -33,9 +33,12 @@ $gradient: linear-gradient(180deg, $second-color 0%, $gradient-second 100%)
     font-family: 'Nunito'
     list-style: none
 
+
+// debug
 body
     background-color: lightblue
 
+// navbar
 header
     z-index: 1
     position: fixed
@@ -83,6 +86,7 @@ header
     @media screen and (max-width: $responsive-size)
         display: none
 
+// sidebar
 .sidebar
     @media screen and (max-width: $responsive-size)
             display: none
@@ -125,7 +129,10 @@ header
             flex-direction: row
             justify-content: space-between
             align-items: center
-            img
+            svg
                 display: flex
                 justify-content: center
                 align-items: center
+                fill: $text
+                &:hover
+                    fill: $main-color

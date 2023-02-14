@@ -134,10 +134,14 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-.sidebar .contact div img {
+.sidebar .contact div svg {
   display: flex;
   justify-content: center;
   align-items: center;
+  fill: #363636;
+}
+.sidebar .contact div svg:hover {
+  fill: #3CE0A0;
 }
 
 /*# sourceMappingURL=style.css.map */
