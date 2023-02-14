@@ -1,0 +1,19 @@
+{
+	"name": "polo",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"sass": "sass --watch ./assets/sass/main.sass:./assets/css/style.css ./assets/sass/patients.sass:./assets/css/patients.css"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Niskko/poloProject.git"
+	},
+	"author": "Niskko",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Niskko/poloProject/issues"
+	},
+	"homepage": "https://github.com/Niskko/poloProject#readme"
+}
