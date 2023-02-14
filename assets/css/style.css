@@ -14,7 +14,17 @@
   font-family: "Nunito";
 }
 
+body {
+  background-color: lightblue;
+}
+
 header {
+  position: fixed;
+  width: 100%;
+}
+
+nav {
+  background-color: #FFFFFF;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -36,6 +46,7 @@ header {
   flex-direction: column;
   justify-content: right;
   align-items: flex-end;
+  color: #363636;
 }
 .account .account__menu {
   display: flex;

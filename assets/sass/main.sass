@@ -14,13 +14,23 @@ $third-color: #FFFFFF
 $fourth-color: #FFD900
 $text: #363636
 $small-text: #757575
+$gradient-first: $second-color
+$gradient-second: #F9F9F9
+$gradient: linear-gradient(180deg, $second-color 0%, $gradient-second 100%)
 
 *
     margin: 0
     padding: 0
     font-family: 'Nunito'
 
+body
+    background-color: lightblue
+
 header
+    position: fixed
+    width: 100%
+nav
+    background-color: $third-color
     display: flex
     flex-direction: row
     justify-content: space-between
@@ -40,6 +50,7 @@ header
         flex-direction: column
         justify-content: right
         align-items: flex-end
+        color: $text
     .account__menu
         display: flex
         justify-content: space-between  
