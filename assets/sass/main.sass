@@ -7,7 +7,9 @@
     /* https://fonts.google.com/specimen/Nunito */
     font-family: 'Nunito Italic'
     src: url(../font/Nunito-Italic.ttf)
-    
+// variables
+$responsive-size: 768px
+// Color
 $main-color: #3CE0A0
 $second-color: #E4F4ED
 $third-color: #FFFFFF
@@ -18,31 +20,44 @@ $gradient-first: $second-color
 $gradient-second: #F9F9F9
 $gradient: linear-gradient(180deg, $second-color 0%, $gradient-second 100%)
 
+@function getShade($color, $amount: 25%)
+    @if ( lightness($color) < 25% )
+        $color: lighten($color, $amount)
+    @else
+        $color: darken($color, $amount)
+    @return $color
+
 *
     margin: 0
     padding: 0
     font-family: 'Nunito'
+    list-style: none
 
 body
     background-color: lightblue
 
 header
+    z-index: 1
     position: fixed
     width: 100%
-nav
+.navbar
     background-color: $third-color
     display: flex
     flex-direction: row
     justify-content: space-between
     align-items: center
     padding: 20px
-    
+    img
+        cursor: pointer
+
 .account
     display: flex
     flex-direction: row
     align-items: center
     justify-content: space-around
     width: 150px
+    @media screen and (max-width: $responsive-size)
+        width: 50px
     .account__name
         display: flex
         line-height: 1
@@ -51,8 +66,66 @@ nav
         justify-content: right
         align-items: flex-end
         color: $text
+        @media screen and (max-width: $responsive-size)
+            display: none
     .account__menu
         display: flex
         justify-content: space-between  
         align-items: center
+        padding: 5px
+        cursor: pointer
+        border-radius: 30px
             
+        &:hover
+            background-color: getShade($third-color, 10%)
+
+#menu-button
+    @media screen and (max-width: $responsive-size)
+        display: none
+
+.sidebar
+    @media screen and (max-width: $responsive-size)
+            display: none
+    position: fixed
+    background-color: $main-color
+    width: 300px
+    height: 100vh
+    padding-top: 100px
+    li
+        cursor: pointer
+        &:hover
+            color: $fourth-color
+    ul 
+        display: flex
+        flex-direction: column
+        align-items: center
+        line-height: 1.5
+        color: $third-color
+        font-weight: 1000
+        font-size: 1.3rem
+        li
+            margin-top: 10px
+            width: 200px
+            + ul
+                margin-left: 20px
+                font-size: 1rem
+    .contact
+        position: fixed
+        display: flex
+        flex-direction: row
+        border-radius: 0px 100px 100px 0px
+        bottom: 50px
+        width: 125px
+        height: 50px
+        background-color: $third-color
+        div
+            margin-left: 40px
+            width: 60px
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            align-items: center
+            img
+                display: flex
+                justify-content: center
+                align-items: center

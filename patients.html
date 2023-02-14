@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<header>
-			<nav>
+			<nav class="navbar">
 				<img src="assets/img/logo.svg" alt="logo" />
 				<div class="account">
 					<div class="account__name">
@@ -23,6 +23,7 @@
 							alt="Account avatar"
 						/>
 						<img
+							id="menu-button"
 							src="assets/img/arrow_menu.svg"
 							alt="Menu button"
 						/>
@@ -31,7 +32,40 @@
 			</nav>
 		</header>
 		<main>
-			<div></div>
+			<nav class="sidebar">
+				<ul>
+					<li>Accueil</li>
+					<li>Mes ordonannces</li>
+					<li>Mes patients</li>
+					<ul id="mespatients">
+						<li>Tous les patients</li>
+						<li>Patients en attente</li>
+						<li>Patients archivés</li>
+					</ul>
+					<li>Mes pharmacies</li>
+					<li>Mes documents</li>
+					<ul id="mesdocuments">
+						<li>Tous mes documents</li>
+						<li>Documents archivés</li>
+					</ul>
+					<li>Mes Pilbeez</li>
+					<li>Parrainer un cabinet</li>
+				</ul>
+				<div class="contact">
+					<div>
+						<a href="tel:0123456789"
+							><img
+								src="./assets/img/phone.svg"
+								alt="phone button"
+						/></a>
+						<a href="mailto:contact@polo.fr"
+							><img
+								src="./assets/img/mail.svg"
+								alt="email button"
+						/></a>
+					</div>
+				</div>
+			</nav>
 		</main>
 		<footer></footer>
 		<script src="assets/js/script.js" defer></script>
