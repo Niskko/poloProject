@@ -112,12 +112,16 @@ $gradient: linear-gradient(180deg, $second-color 0%, $gradient-second 100%)
     justify-content: space-around
     height: 200px
     h2
+        text-align: center
         color: $main-color
         font-size: 2.2rem
+        @media screen and (max-width: $phone-size)
+            font-size: 1.9rem
     p
         width: 300px
         color: $small-text
         text-align: center
+        font-weight: 200
     input
         border-radius: 100px
         height: 70px
@@ -126,6 +130,61 @@ $gradient: linear-gradient(180deg, $second-color 0%, $gradient-second 100%)
         text-align: center
         color: $text
         font-size: 1.5rem
+        @media screen and (max-width: $phone-size)
+            width: 80%
         &:focus
             outline: none
             border: 1px solid $main-color
+
+// card carrousel
+.card-Carrousel
+    display: flex
+    flex-direction: row
+    justify-content: space-evenly
+    flex-wrap: wrap
+.card
+    display: flex
+    flex-direction: column
+    align-items: center
+    width: 300px
+    height: 550px
+    &__content
+        display: flex
+        flex-direction: column
+        align-items: center
+        border-radius: 15px
+        width: 100%
+        height: 500px
+        border: 3px solid $second-color
+        background-color: $second-color
+        transform: translateY(-40px)
+        &__head
+            margin-top: 50px
+            text-align: center
+            h3
+                color: $main-color
+        .separator
+            margin: 30px 5%
+        &__text
+            display: grid
+            width: 80%
+            align-items: center
+            text-align: left
+            grid-template-columns: 1fr 10fr
+            grid-template-rows: 1fr 1fr 1fr 1fr
+            height: 200px
+            p
+                margin-left: 20px
+            div
+                display: flex
+                flex-direction: column
+            img
+                justify-self: center
+    > img
+        z-index: 1
+        width: 150px
+
+.card:nth-child(2n)
+    .card__content
+        border: 3px solid $main-color
+        background-color: $third-color

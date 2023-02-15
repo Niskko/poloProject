@@ -137,13 +137,20 @@
   height: 200px;
 }
 .searching-menu h2 {
+  text-align: center;
   color: #3CE0A0;
   font-size: 2.2rem;
+}
+@media screen and (max-width: 800px) {
+  .searching-menu h2 {
+    font-size: 1.9rem;
+  }
 }
 .searching-menu p {
   width: 300px;
   color: #757575;
   text-align: center;
+  font-weight: 200;
 }
 .searching-menu input {
   border-radius: 100px;
@@ -154,9 +161,78 @@
   color: #363636;
   font-size: 1.5rem;
 }
+@media screen and (max-width: 800px) {
+  .searching-menu input {
+    width: 80%;
+  }
+}
 .searching-menu input:focus {
   outline: none;
   border: 1px solid #3CE0A0;
+}
+
+.card-Carrousel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  height: 550px;
+}
+.card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  width: 100%;
+  height: 500px;
+  border: 3px solid #E4F4ED;
+  background-color: #E4F4ED;
+  transform: translateY(-40px);
+}
+.card__content__head {
+  margin-top: 50px;
+  text-align: center;
+}
+.card__content__head h3 {
+  color: #3CE0A0;
+}
+.card__content .separator {
+  margin: 30px 5%;
+}
+.card__content__text {
+  display: grid;
+  width: 80%;
+  align-items: center;
+  text-align: left;
+  grid-template-columns: 1fr 10fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  height: 200px;
+}
+.card__content__text p {
+  margin-left: 20px;
+}
+.card__content__text div {
+  display: flex;
+  flex-direction: column;
+}
+.card__content__text img {
+  justify-self: center;
+}
+.card > img {
+  z-index: 1;
+  width: 150px;
+}
+
+.card:nth-child(2n) .card__content {
+  border: 3px solid #3CE0A0;
+  background-color: #FFFFFF;
 }
 
 /*# sourceMappingURL=patients.css.map */
