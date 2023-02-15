@@ -27,7 +27,8 @@ for (data of dataPatient.patient) {
 
 	// Age
 	if (data.age != null && data.age != undefined && data.age != '') {
-		document.querySelector(`#card-${id} #card-age`).textContent = data.age;
+		document.querySelector(`#card-${id} #card-age`).textContent =
+			data.age + ' ans';
 	}
 
 	// Téléphone
