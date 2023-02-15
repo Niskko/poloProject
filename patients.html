@@ -197,16 +197,16 @@
 			<div class="separator"></div>
 			<!-- start card carrousel -->
 			<div class="card-Carrousel">
-				<div class="card">
+				<div class="card" id="card-0">
 					<img
-						id="avatar-0"
+						id="card-avatar"
 						src="./data/avatar_patient_0.svg"
 						alt="profile avatar"
 					/>
 					<div class="card__content">
 						<div class="card__content__head">
-							<h3 id="name-0">---</h3>
-							<p id="age-0">---</p>
+							<h3 id="card-name">---</h3>
+							<p id="card-age">---</p>
 						</div>
 						<div class="separator"></div>
 						<div class="card__content__text">
@@ -214,7 +214,9 @@
 								src="./assets/img/phone.svg"
 								alt="phone number"
 							/>
-							<p><a href="tel:0477366595" id="phone-0">---</a></p>
+							<p>
+								<a href="tel:0477366595" id="card-phone">---</a>
+							</p>
 							<img
 								src="./assets/img/mail.svg"
 								alt="phone number"
@@ -222,7 +224,7 @@
 							<p>
 								<a
 									href="mailto:cecilemoulin@gmail.com"
-									id="mail-0"
+									id="card-email"
 									>---</a
 								>
 							</p>
@@ -231,8 +233,8 @@
 								alt="phone number"
 							/>
 							<div>
-								<p id="address-0">---</p>
-								<p id="city-0">---</p>
+								<p id="card-address">---</p>
+								<p id="card-city">---</p>
 							</div>
 							<img
 								src="./assets/img/plus.svg"
@@ -257,6 +259,8 @@
 				<p>points</p>
 			</div>
 		</footer>
+		<script src="data/data.js" type="text/javascript"></script>
+		<script src="assets/js/patients.js" defer></script>
 		<script src="assets/js/script.js" defer></script>
 	</body>
 </html>
