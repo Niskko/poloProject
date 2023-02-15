@@ -93,6 +93,9 @@ header {
     display: none;
   }
 }
+.sidebar .active {
+  color: #363636;
+}
 .sidebar li {
   cursor: pointer;
 }

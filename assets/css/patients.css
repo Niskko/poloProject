@@ -78,18 +78,18 @@
   background-color: #20c987;
 }
 
-.btn-patient div:hover, #active, #addbutton {
+.btn-patient div:hover, .btn-patient #active, #addbutton {
   color: #FFFFFF;
   background-color: #3CE0A0;
 }
-.btn-patient div:hover svg, #active svg, #addbutton svg {
+.btn-patient div:hover svg, .btn-patient #active svg, #addbutton svg {
   fill: #FFFFFF;
   stroke: #FFFFFF;
 }
-.btn-patient div:hover svg #svg1, #active svg #svg1, #addbutton svg #svg1 {
+.btn-patient div:hover svg #svg1, .btn-patient #active svg #svg1, #addbutton svg #svg1 {
   stroke: #3CE0A0;
 }
-.btn-patient div:hover svg #svg2, #active svg #svg2, #addbutton svg #svg2 {
+.btn-patient div:hover svg #svg2, .btn-patient #active svg #svg2, #addbutton svg #svg2 {
   fill: #3CE0A0;
 }
 
