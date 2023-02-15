@@ -14,7 +14,6 @@
   align-items: center;
   justify-content: space-evenly;
   padding-top: 100px;
-  margin-left: 300px;
   height: 300px;
   background: linear-gradient(180deg, #E4F4ED 0%, #F9F9F9 100%);
 }
@@ -24,10 +23,14 @@
   font-size: 3.5rem;
   text-align: center;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1350px) {
+  .heading h1 {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 800px) {
   .heading {
     height: 600px;
-    margin-left: 0px;
   }
   .heading h1 {
     font-size: 2.5rem;
@@ -39,9 +42,19 @@
   width: 90%;
   flex-direction: row;
   justify-content: space-evenly;
+  align-items: center;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1350px) {
   .btn-patient {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 800px) {
+  .btn-patient {
+    display: flex;
     flex-direction: column;
     height: 800px;
   }
@@ -59,6 +72,12 @@
   border: 3px solid #3CE0A0;
   background-color: #FFFFFF;
   color: #363636;
+  max-width: 150px;
+}
+@media screen and (max-width: 1350px) {
+  .btn-patient div {
+    margin-top: 20px;
+  }
 }
 .btn-patient div p {
   padding-inline: 10px;
@@ -94,21 +113,50 @@
 }
 
 .triangle {
-  margin-left: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .triangle div {
   width: 100px;
-  height: 100px;
+  height: 50px;
   background-color: #F9F9F9;
-  clip-path: polygon(100% 0, 0 0, 50% 30%);
+  clip-path: polygon(100% 0, 0 0, 50% 50%);
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   .triangle {
     margin-left: 0px;
   }
+}
+
+.searching-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 200px;
+}
+.searching-menu h2 {
+  color: #3CE0A0;
+  font-size: 2.2rem;
+}
+.searching-menu p {
+  width: 300px;
+  color: #757575;
+  text-align: center;
+}
+.searching-menu input {
+  border-radius: 100px;
+  height: 70px;
+  width: 500px;
+  border: 1px solid #DDDDDD;
+  text-align: center;
+  color: #363636;
+  font-size: 1.5rem;
+}
+.searching-menu input:focus {
+  outline: none;
+  border: 1px solid #3CE0A0;
 }
 
 /*# sourceMappingURL=patients.css.map */

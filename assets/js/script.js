@@ -1,5 +1,9 @@
 var firstUl = document.querySelector('.sidebar > ul');
 
+window.onresize = function () {
+	console.log(window.innerWidth);
+};
+
 /**
  * Boucle sur les enfants de la balise "ul" dans la sidebar:
  * Si l'enfant est une balise "ul", on ajoute un listener sur le parent "li" et on cache la balise "ul"

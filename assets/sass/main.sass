@@ -11,6 +11,11 @@
 body
     background-color: $third-color
 
+main
+    margin-left: $sidebar-size
+    @media screen and (max-width: $phone-size)
+        margin-left: 0px
+
 // navbar
 header
     z-index: 1
@@ -32,7 +37,7 @@ header
     align-items: center
     justify-content: space-around
     width: 150px
-    @media screen and (max-width: $responsive-size)
+    @media screen and (max-width: $phone-size)
         width: 50px
     &__name
         display: flex
@@ -42,8 +47,7 @@ header
         justify-content: right
         align-items: flex-end
         color: $text
-        @media screen and (max-width: $responsive-size)
-            display: none
+        @extend #menu-button
     &__menu
         display: flex
         justify-content: space-between  
@@ -56,18 +60,18 @@ header
             background-color: getShade($third-color, 10%)
 
 #menu-button
-    @media screen and (max-width: $responsive-size)
+    @media screen and (max-width: $phone-size)
         display: none
 
 
 // sidebar
 .sidebar
-    @media screen and (max-width: $responsive-size)
-            display: none
+    @extend #menu-button
     position: fixed
     background-color: $main-color
-    width: 300px
+    width: $sidebar-size
     height: 100vh
+    left: 0
     padding-top: 100px
     align-items: center
     &--active

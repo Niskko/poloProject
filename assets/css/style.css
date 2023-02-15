@@ -19,6 +19,15 @@ body {
   background-color: #FFFFFF;
 }
 
+main {
+  margin-left: 300px;
+}
+@media screen and (max-width: 800px) {
+  main {
+    margin-left: 0px;
+  }
+}
+
 header {
   z-index: 1;
   position: fixed;
@@ -44,7 +53,7 @@ header {
   justify-content: space-around;
   width: 150px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   .account {
     width: 50px;
   }
@@ -58,11 +67,6 @@ header {
   align-items: flex-end;
   color: #363636;
 }
-@media screen and (max-width: 768px) {
-  .account__name {
-    display: none;
-  }
-}
 .account__menu {
   display: flex;
   justify-content: space-between;
@@ -75,8 +79,8 @@ header {
   background-color: #e6e6e6;
 }
 
-@media screen and (max-width: 768px) {
-  #menu-button {
+@media screen and (max-width: 800px) {
+  #menu-button, .sidebar, .account__name {
     display: none;
   }
 }
@@ -86,13 +90,9 @@ header {
   background-color: #3CE0A0;
   width: 300px;
   height: 100vh;
+  left: 0;
   padding-top: 100px;
   align-items: center;
-}
-@media screen and (max-width: 768px) {
-  .sidebar {
-    display: none;
-  }
 }
 .sidebar--active {
   color: #363636;
