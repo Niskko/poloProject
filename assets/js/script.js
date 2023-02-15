@@ -63,6 +63,7 @@ document
 		isOpen = true;
 		document.querySelector('.sidebar').style.display = 'block';
 		background.style.display = 'block';
+		document.body.style.overflow = 'hidden';
 		background.addEventListener('click', function () {
 			closeMenu();
 		});
@@ -75,4 +76,5 @@ function closeMenu() {
 	isOpen = false;
 	document.querySelector('.sidebar').style.display = 'none';
 	background.style.display = 'none';
+	document.body.style.overflow = 'auto';
 }

@@ -1,7 +1,6 @@
 var templateCard = document.querySelector('#card-0');
 var parentCard = document.querySelector('.card-Carrousel');
 var id = 1;
-console.log(dataPatient.patient.length);
 for (data of dataPatient.patient) {
 	let card = templateCard.cloneNode(true);
 	card.id = `card-${id}`;
@@ -69,3 +68,5 @@ for (data of dataPatient.patient) {
 
 	id++;
 }
+
+//Todo: Barre de recherche avec prise en compte des accents

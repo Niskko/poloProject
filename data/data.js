@@ -1,7 +1,7 @@
 dataPatient = {
 	patient: [
 		{
-			avatar: '../../data/avatar_patient_1.svg',
+			avatar: './data/avatar_patient_1.svg',
 			firstName: 'Cécile',
 			lastName: 'Moulin',
 			age: 81,
@@ -13,7 +13,7 @@ dataPatient = {
 			archived: false,
 		},
 		{
-			avatar: '../../data/avatar_patient_3.svg',
+			avatar: './data/avatar_patient_3.svg',
 			firstName: 'Jean',
 			lastName: 'Dupont',
 			age: 65,
@@ -25,7 +25,7 @@ dataPatient = {
 			archived: false,
 		},
 		{
-			avatar: '../../data/avatar_patient_2.svg',
+			avatar: './data/avatar_patient_2.svg',
 			firstName: 'Marie',
 			lastName: 'Durand',
 			age: 75,
@@ -37,7 +37,7 @@ dataPatient = {
 			archived: false,
 		},
 		{
-			avatar: '../../data/avatar_patient_5.svg',
+			avatar: './data/avatar_patient_5.svg',
 			firstName: 'Jeanne',
 			lastName: 'Moulin',
 			age: 81,
@@ -49,7 +49,7 @@ dataPatient = {
 			archived: false,
 		},
 		{
-			avatar: '../../data/avatar_patient_6.svg',
+			avatar: './data/avatar_patient_6.svg',
 			firstName: 'Michel',
 			lastName: 'Meunier',
 			age: 46,
@@ -61,7 +61,7 @@ dataPatient = {
 			archived: false,
 		},
 		{
-			avatar: '../../data/avatar_patient_4.svg',
+			avatar: './data/avatar_patient_4.svg',
 			firstName: 'Clara',
 			lastName: 'Lefebvre',
 			age: 75,

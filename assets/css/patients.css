@@ -177,6 +177,11 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+@media screen and (max-width: 800px) {
+  .card-Carrousel {
+    margin-bottom: 50px;
+  }
+}
 
 .card {
   margin-inline: 20px;
