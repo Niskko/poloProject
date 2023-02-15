@@ -1,9 +1,5 @@
 var firstUl = document.querySelector('.sidebar > ul');
 
-window.onresize = function () {
-	console.log(window.innerWidth);
-};
-
 /**
  * Boucle sur les enfants de la balise "ul" dans la sidebar:
  * Si l'enfant est une balise "ul", on ajoute un listener sur le parent "li" et on cache la balise "ul"
@@ -47,4 +43,36 @@ for (let i = 0; i < firstUl.children.length; i++) {
 			}
 		});
 	}
+}
+
+/**
+ * Gestion du menu burger
+ * Si le menu est ouvert, et qu'on clique sur le bouton ou le background, on le ferme
+ * Si le menu est fermé, et qu'on clique sur le bouton, on l'ouvre
+ */
+var isOpen = false;
+var background = document.querySelector('.graybackground');
+background.style.display = 'none';
+document
+	.querySelector('.footer-menu__burger')
+	.addEventListener('click', function () {
+		if (isOpen) {
+			closeMenu();
+			return;
+		}
+		isOpen = true;
+		document.querySelector('.sidebar').style.display = 'block';
+		background.style.display = 'block';
+		background.addEventListener('click', function () {
+			closeMenu();
+		});
+	});
+
+/**
+ * Fonction qui ferme le menu
+ */
+function closeMenu() {
+	isOpen = false;
+	document.querySelector('.sidebar').style.display = 'none';
+	background.style.display = 'none';
 }

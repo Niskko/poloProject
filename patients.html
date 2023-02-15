@@ -10,6 +10,7 @@
 		<title>Polo - Patients</title>
 	</head>
 	<body>
+		<div class="graybackground"></div>
 		<header>
 			<!-- navbar -->
 			<nav class="navbar">
@@ -194,16 +195,18 @@
 				<input placeholder="Rechercher..." type="text" />
 			</div>
 			<div class="separator"></div>
+			<!-- start card carrousel -->
 			<div class="card-Carrousel">
 				<div class="card">
 					<img
+						id="avatar-0"
 						src="./data/avatar_patient_0.svg"
-						alt="card template"
+						alt="profile avatar"
 					/>
 					<div class="card__content">
 						<div class="card__content__head">
-							<h3>Cécile Moulin</h3>
-							<p>81 ans</p>
+							<h3 id="name-0">---</h3>
+							<p id="age-0">---</p>
 						</div>
 						<div class="separator"></div>
 						<div class="card__content__text">
@@ -211,107 +214,49 @@
 								src="./assets/img/phone.svg"
 								alt="phone number"
 							/>
-							<p>04 77 36 65 95</p>
+							<p><a href="tel:0477366595" id="phone-0">---</a></p>
 							<img
 								src="./assets/img/mail.svg"
 								alt="phone number"
 							/>
-							<p>cecilemoulin@gmail.com</p>
+							<p>
+								<a
+									href="mailto:cecilemoulin@gmail.com"
+									id="mail-0"
+									>---</a
+								>
+							</p>
 							<img
 								src="./assets/img/map.svg"
 								alt="phone number"
 							/>
 							<div>
-								<p>16 rue Maurice Bouchor</p>
-								<p>68007 Lyon</p>
+								<p id="address-0">---</p>
+								<p id="city-0">---</p>
 							</div>
 							<img
 								src="./assets/img/plus.svg"
 								alt="phone number"
 							/>
-							<p>voir ses ordonannces</p>
+							<p><a href="#">voir ses ordonannces</a></p>
 						</div>
 					</div>
 				</div>
-				<div class="card">
-					<img
-						src="./data/avatar_patient_0.svg"
-						alt="card template"
-					/>
-					<div class="card__content">
-						<div class="card__content__head">
-							<h3>Cécile Moulin</h3>
-							<p>81 ans</p>
-						</div>
-						<div class="separator"></div>
-						<div class="card__content__text">
-							<img
-								src="./assets/img/phone.svg"
-								alt="phone number"
-							/>
-							<p>04 77 36 65 95</p>
-							<img
-								src="./assets/img/mail.svg"
-								alt="phone number"
-							/>
-							<p>cecilemoulin@gmail.com</p>
-							<img
-								src="./assets/img/map.svg"
-								alt="phone number"
-							/>
-							<div>
-								<p>16 rue Maurice Bouchor</p>
-								<p>68007 Lyon</p>
-							</div>
-							<img
-								src="./assets/img/plus.svg"
-								alt="phone number"
-							/>
-							<p>voir ses ordonannces</p>
-						</div>
-					</div>
-				</div>
-				<div class="card">
-					<img
-						src="./data/avatar_patient_0.svg"
-						alt="card template"
-					/>
-					<div class="card__content">
-						<div class="card__content__head">
-							<h3>Cécile Moulin</h3>
-							<p>81 ans</p>
-						</div>
-						<div class="separator"></div>
-						<div class="card__content__text">
-							<img
-								src="./assets/img/phone.svg"
-								alt="phone number"
-							/>
-							<p>04 77 36 65 95</p>
-							<img
-								src="./assets/img/mail.svg"
-								alt="phone number"
-							/>
-							<p>cecilemoulin@gmail.com</p>
-							<img
-								src="./assets/img/map.svg"
-								alt="phone number"
-							/>
-							<div>
-								<p>16 rue Maurice Bouchor</p>
-								<p>68007 Lyon</p>
-							</div>
-							<img
-								src="./assets/img/plus.svg"
-								alt="phone number"
-							/>
-							<p>voir ses ordonannces</p>
-						</div>
-					</div>
-				</div>
+				<!-- end card carrousel -->
 			</div>
 		</main>
-		<footer></footer>
+		<footer>
+			<div class="footer-menu">
+				<div class="footer-menu__burger">
+					<img src="./assets/img/menu.svg" alt="logo" />
+				</div>
+				<div class="horiz-separator"></div>
+			</div>
+			<div class="counter">
+				<p id="points">1740</p>
+				<p>points</p>
+			</div>
+		</footer>
 		<script src="assets/js/script.js" defer></script>
 	</body>
 </html>

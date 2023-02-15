@@ -179,6 +179,7 @@
 }
 
 .card {
+  margin-inline: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -199,6 +200,7 @@
 .card__content__head {
   margin-top: 50px;
   text-align: center;
+  color: #363636;
 }
 .card__content__head h3 {
   color: #3CE0A0;
@@ -217,6 +219,14 @@
 }
 .card__content__text p {
   margin-left: 20px;
+  color: #363636;
+}
+.card__content__text p a {
+  text-decoration: none;
+  color: #363636;
+}
+.card__content__text p a:hover {
+  text-decoration: underline;
 }
 .card__content__text div {
   display: flex;

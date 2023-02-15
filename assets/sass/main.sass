@@ -66,6 +66,8 @@ header
 
 // sidebar
 .sidebar
+    @media screen and (max-width: $phone-size)
+        z-index: 6
     @extend #menu-button
     position: fixed
     background-color: $main-color
@@ -103,6 +105,8 @@ header
     width: 125px
     height: 50px
     background-color: $third-color
+    @media screen and (max-width: $phone-size)
+        bottom: 80px
     &__img
         margin-left: 40px
         width: 60px
@@ -120,8 +124,63 @@ header
 #here 
     list-style-image: url(../img/active.png)
 
+// main
 .separator
     width: 90%
     height: 2px
     background-color: #E0E0E0
     margin: 75px 5%
+
+// footer
+@media screen and (max-width: $phone-size)
+    footer
+        z-index: 10
+        position: fixed
+        bottom: 0
+        width: 100%
+        height: 60px
+        background-color: $main-color
+        display: flex
+        justify-content: space-between
+        align-items: center
+        .footer-menu
+            display: flex
+            flex-direction: row
+            &__burger
+                display: flex
+                align-items: center
+                justify-content: center
+                cursor: pointer
+                width: 60px
+                height: 60px
+                img
+                    width: 30px
+                    height: 30px
+                &:hover
+                    background-color: getShade($main-color, 10%)
+            .horiz-separator
+                width: 1px
+                height: 60px
+                background-color: $third-color
+        .counter
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            height: 100%
+            width: 100px
+            background-color: $fourth-color
+            line-height: 1
+            #points
+                font-size: 1.5rem
+                font-weight: 800
+                color: $third-color
+            &:hover
+                background-color: getShade($fourth-color, 3%)
+
+.graybackground
+    position: fixed
+    background-color: rgba(0, 0, 0, 0.7)
+    z-index: 6
+    width: 100vw
+    height: 100vh
