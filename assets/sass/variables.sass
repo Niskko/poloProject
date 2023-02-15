@@ -1,0 +1,25 @@
+@font-face
+    /* https://fonts.google.com/specimen/Nunito */
+    font-family: 'Nunito'
+    src: url(../font/Nunito-ExtraBold.ttf)
+
+@font-face
+    /* https://fonts.google.com/specimen/Nunito */
+    font-family: 'Nunito Italic'
+    src: url(../font/Nunito-Italic.ttf)
+// variables
+$responsive-size: 768px
+// Color
+$main-color: #3CE0A0
+$second-color: #E4F4ED
+$third-color: #FFFFFF
+$fourth-color: #FFD900
+$text: #363636
+$small-text: #757575
+
+@function getShade($color, $amount: 25%)
+    @if ( lightness($color) < 25% )
+        $color: lighten($color, $amount)
+    @else
+        $color: darken($color, $amount)
+    @return $color

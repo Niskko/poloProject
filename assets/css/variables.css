@@ -1,0 +1,12 @@
+@font-face {
+  /* https://fonts.google.com/specimen/Nunito */
+  font-family: "Nunito";
+  src: url(../font/Nunito-ExtraBold.ttf);
+}
+@font-face {
+  /* https://fonts.google.com/specimen/Nunito */
+  font-family: "Nunito Italic";
+  src: url(../font/Nunito-Italic.ttf);
+}
+
+/*# sourceMappingURL=variables.css.map */

@@ -1,0 +1,97 @@
+@import 'variables'
+
+$gradient-first: $second-color
+$gradient-second: #F9F9F9
+$gradient: linear-gradient(180deg, $second-color 0%, $gradient-second 100%)
+
+//heading
+.heading
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-evenly
+    padding-top: 100px
+    margin-left: 300px
+    height: 300px
+    background: $gradient
+    h1
+        color: $text
+        font-weight: 2000
+        font-size: 3.5rem
+        text-align: center
+    @media screen and (max-width: $responsive-size)
+        height: 600px
+        margin-left: 0px
+        h1
+            font-size: 2.5rem
+
+.btn-patient
+    display: flex
+    width: 90%
+    flex-direction: row
+    justify-content: space-evenly
+    @media screen and (max-width: $responsive-size)
+            flex-direction: column
+            height: 800px
+    div
+        cursor: pointer
+        display: flex
+        flex-direction: row
+        justify-content: space-around
+        align-items: center
+        padding-inline: 50px
+        font-weight: 600
+        height: 80px
+        border-radius: 100px
+        border: 3px solid $main-color
+
+        background-color: $third-color
+        color: $text
+        p
+            padding-inline:  10px
+        svg
+            padding-inline:  10px
+            fill: $main-color
+            stroke: $main-color
+            #svg1
+                stroke: $third-color
+            #svg2
+                fill: $third-color
+        &:hover
+            @extend %typical
+
+// active button in patient page
+#active
+    @extend %typical
+
+// add button
+#addbutton
+    @extend %typical
+    &:hover
+        background-color: getShade($main-color, 10%)  
+
+%typical
+    color: $third-color
+    background-color: $main-color
+    svg
+        fill: $third-color
+        stroke: $third-color
+        #svg1
+            stroke: $main-color
+        #svg2
+            fill: $main-color
+
+.triangle
+    margin-left: 300px
+    display: flex
+    justify-content: center
+    align-items: center
+    div
+        width: 100px
+        height: 100px
+        background-color: $gradient-second
+        clip-path: polygon(100% 0, 0 0, 50% 30%)
+    @media screen and (max-width: $responsive-size)
+        margin-left: 0px
+
+// searching menu

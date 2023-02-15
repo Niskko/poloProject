@@ -1,32 +1,5 @@
-@font-face
-    /* https://fonts.google.com/specimen/Nunito */
-    font-family: 'Nunito'
-    src: url(../font/Nunito-Regular.ttf)
-
-@font-face
-    /* https://fonts.google.com/specimen/Nunito */
-    font-family: 'Nunito Italic'
-    src: url(../font/Nunito-Italic.ttf)
-// variables
-$responsive-size: 768px
-// Color
-$main-color: #3CE0A0
-$second-color: #E4F4ED
-$third-color: #FFFFFF
-$fourth-color: #FFD900
-$text: #363636
-$small-text: #757575
-$gradient-first: $second-color
-$gradient-second: #F9F9F9
-$gradient: linear-gradient(180deg, $second-color 0%, $gradient-second 100%)
-
-@function getShade($color, $amount: 25%)
-    @if ( lightness($color) < 25% )
-        $color: lighten($color, $amount)
-    @else
-        $color: darken($color, $amount)
-    @return $color
-
+@import 'variables'
+    
 *
     margin: 0
     padding: 0
@@ -36,7 +9,7 @@ $gradient: linear-gradient(180deg, $second-color 0%, $gradient-second 100%)
 
 // debug
 body
-    background-color: lightblue
+    background-color: $third-color
 
 // navbar
 header
@@ -106,7 +79,7 @@ header
         line-height: 1.5
         color: $third-color
         font-weight: 1000
-        font-size: 1.3rem
+        font-size: 1.2rem
         li
             margin-top: 10px
             width: 200px

@@ -1,3 +1,114 @@
+@font-face {
+  /* https://fonts.google.com/specimen/Nunito */
+  font-family: "Nunito";
+  src: url(../font/Nunito-ExtraBold.ttf);
+}
+@font-face {
+  /* https://fonts.google.com/specimen/Nunito */
+  font-family: "Nunito Italic";
+  src: url(../font/Nunito-Italic.ttf);
+}
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 100px;
+  margin-left: 300px;
+  height: 300px;
+  background: linear-gradient(180deg, #E4F4ED 0%, #F9F9F9 100%);
+}
+.heading h1 {
+  color: #363636;
+  font-weight: 2000;
+  font-size: 3.5rem;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .heading {
+    height: 600px;
+    margin-left: 0px;
+  }
+  .heading h1 {
+    font-size: 2.5rem;
+  }
+}
 
+.btn-patient {
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+@media screen and (max-width: 768px) {
+  .btn-patient {
+    flex-direction: column;
+    height: 800px;
+  }
+}
+.btn-patient div {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-inline: 50px;
+  font-weight: 600;
+  height: 80px;
+  border-radius: 100px;
+  border: 3px solid #3CE0A0;
+  background-color: #FFFFFF;
+  color: #363636;
+}
+.btn-patient div p {
+  padding-inline: 10px;
+}
+.btn-patient div svg {
+  padding-inline: 10px;
+  fill: #3CE0A0;
+  stroke: #3CE0A0;
+}
+.btn-patient div svg #svg1 {
+  stroke: #FFFFFF;
+}
+.btn-patient div svg #svg2 {
+  fill: #FFFFFF;
+}
+#addbutton:hover {
+  background-color: #20c987;
+}
+
+.btn-patient div:hover, #active, #addbutton {
+  color: #FFFFFF;
+  background-color: #3CE0A0;
+}
+.btn-patient div:hover svg, #active svg, #addbutton svg {
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
+}
+.btn-patient div:hover svg #svg1, #active svg #svg1, #addbutton svg #svg1 {
+  stroke: #3CE0A0;
+}
+.btn-patient div:hover svg #svg2, #active svg #svg2, #addbutton svg #svg2 {
+  fill: #3CE0A0;
+}
+
+.triangle {
+  margin-left: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.triangle div {
+  width: 100px;
+  height: 100px;
+  background-color: #F9F9F9;
+  clip-path: polygon(100% 0, 0 0, 50% 30%);
+}
+@media screen and (max-width: 768px) {
+  .triangle {
+    margin-left: 0px;
+  }
+}
 
 /*# sourceMappingURL=patients.css.map */

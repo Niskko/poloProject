@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"sass": "sass --watch ./assets/sass/main.sass:./assets/css/style.css ./assets/sass/patients.sass:./assets/css/patients.css"
+		"sass": "sass --watch ./assets/sass/main.sass:./assets/css/style.css ./assets/sass/patients.sass:./assets/css/patients.css ./assets/sass/variables.sass:./assets/css/variables.css"
 	},
 	"repository": {
 		"type": "git",
