@@ -18,7 +18,7 @@ for (let i = 0; i < firstUl.children.length; i++) {
 		//On vérifie si on se situe sur la page lié au bouton "li"
 		if (FatherOfCurrent.id == 'here') {
 			current.style.display = 'block';
-			FatherOfCurrent.classList.add('active');
+			FatherOfCurrent.classList.add('sidebar--active');
 		} else {
 			current.style.display = 'none';
 		}
@@ -26,19 +26,19 @@ for (let i = 0; i < firstUl.children.length; i++) {
 		FatherOfCurrent.addEventListener('click', function () {
 			//On vérifie si la balise "ul" est cachée ou non
 			if (current.style.display == 'none') {
-				//On supprime la classe "active" de tous les parents "li" et on cache toutes les balises "ul" puis on affiche la balise "ul" du bouton "li" cliqué
+				//On supprime la classe "sidebar--active" de tous les parents "li" et on cache toutes les balises "ul" puis on affiche la balise "ul" du bouton "li" cliqué
 				for (let j = 0; j < firstUl.children.length; j++) {
-					firstUl.children[j].classList.remove('active');
+					firstUl.children[j].classList.remove('sidebar--active');
 					if (firstUl.children[j].nodeName == 'UL') {
 						firstUl.children[j].style.display = 'none';
 					}
 				}
-				FatherOfCurrent.classList.add('active');
+				FatherOfCurrent.classList.add('sidebar--active');
 				current.style.display = 'block';
 			}
-			//Si la balise "ul" était déjà affichée, on la cache et on supprime la classe "active" du parent "li"
+			//Si la balise "ul" était déjà affichée, on la cache et on supprime la classe "sidebar--active" du parent "li"
 			else {
-				FatherOfCurrent.classList.remove('active');
+				FatherOfCurrent.classList.remove('sidebar--active');
 				current.style.display = 'none';
 			}
 		});

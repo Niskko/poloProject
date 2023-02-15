@@ -34,7 +34,7 @@ header
     width: 150px
     @media screen and (max-width: $responsive-size)
         width: 50px
-    .account__name
+    &__name
         display: flex
         line-height: 1
         font-weight: 800
@@ -44,7 +44,7 @@ header
         color: $text
         @media screen and (max-width: $responsive-size)
             display: none
-    .account__menu
+    &__menu
         display: flex
         justify-content: space-between  
         align-items: center
@@ -59,6 +59,7 @@ header
     @media screen and (max-width: $responsive-size)
         display: none
 
+
 // sidebar
 .sidebar
     @media screen and (max-width: $responsive-size)
@@ -68,7 +69,8 @@ header
     width: 300px
     height: 100vh
     padding-top: 100px
-    .active
+    align-items: center
+    &--active
         color: $text
     li
         cursor: pointer
@@ -88,26 +90,28 @@ header
             + ul
                 margin-left: 20px
                 font-size: 1rem
-    .contact
-        position: fixed
+.contact
+    position: fixed
+    display: flex
+    flex-direction: row
+    border-radius: 0px 100px 100px 0px
+    bottom: 50px
+    width: 125px
+    height: 50px
+    background-color: $third-color
+    &__img
+        margin-left: 40px
+        width: 60px
         display: flex
         flex-direction: row
-        border-radius: 0px 100px 100px 0px
-        bottom: 50px
-        width: 125px
-        height: 50px
-        background-color: $third-color
-        div
-            margin-left: 40px
-            width: 60px
+        justify-content: space-between
+        align-items: center
+        svg
             display: flex
-            flex-direction: row
-            justify-content: space-between
+            justify-content: center
             align-items: center
-            svg
-                display: flex
-                justify-content: center
-                align-items: center
-                fill: $text
-                &:hover
-                    fill: $main-color
+            fill: $text
+            &:hover
+                fill: $main-color
+#here 
+    list-style-image: url(../img/active.png)
