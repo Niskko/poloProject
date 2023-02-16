@@ -102,13 +102,13 @@ header {
 .sidebar--active {
   color: #363636;
 }
-.sidebar li {
+.sidebar p {
   cursor: pointer;
 }
-.sidebar li:hover {
+.sidebar p:hover {
   color: #FFD900;
 }
-.sidebar ul {
+.sidebar div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -117,11 +117,11 @@ header {
   font-weight: 1000;
   font-size: 1.2rem;
 }
-.sidebar ul li {
+.sidebar div p {
   margin-top: 10px;
   width: 200px;
 }
-.sidebar ul li + ul {
+.sidebar div p + div {
   margin-left: 20px;
   font-size: 1rem;
 }
@@ -157,10 +157,6 @@ header {
 }
 .contact__img svg:hover {
   fill: #3CE0A0;
-}
-
-#here {
-  list-style-image: url(../img/active.png);
 }
 
 .separator {

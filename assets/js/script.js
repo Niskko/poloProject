@@ -1,4 +1,4 @@
-var firstUl = document.querySelector('.sidebar > ul');
+var firstUl = document.querySelector('.sidebar > div');
 
 /**
  * Boucle sur les enfants de la balise "ul" dans la sidebar:
@@ -14,7 +14,7 @@ for (let i = 0; i < firstUl.children.length; i++) {
 	let FatherOfCurrent = firstUl.children[i - 1];
 
 	//On vérifie si l'enfant est une balise "ul"
-	if (current.nodeName == 'UL') {
+	if (current.nodeName == 'DIV') {
 		//On vérifie si on se situe sur la page lié au bouton "li"
 		if (FatherOfCurrent.id == 'here') {
 			current.style.display = 'block';
@@ -29,7 +29,7 @@ for (let i = 0; i < firstUl.children.length; i++) {
 				//On supprime la classe "sidebar--active" de tous les parents "li" et on cache toutes les balises "ul" puis on affiche la balise "ul" du bouton "li" cliqué
 				for (let j = 0; j < firstUl.children.length; j++) {
 					firstUl.children[j].classList.remove('sidebar--active');
-					if (firstUl.children[j].nodeName == 'UL') {
+					if (firstUl.children[j].nodeName == 'DIV') {
 						firstUl.children[j].style.display = 'none';
 					}
 				}
