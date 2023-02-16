@@ -1,49 +1,73 @@
-var firstUl = document.querySelector('.sidebar > div');
+var firstDiv = document.querySelector('.sidebar > div');
 
 /**
- * Boucle sur les enfants de la balise "ul" dans la sidebar:
- * Si l'enfant est une balise "ul", on ajoute un listener sur le parent "li" et on cache la balise "ul"
- * Si le parent "li" a l'id "here", on affiche la balise "ul" et on ajoute la classe "active" au parent "li"
- * Si le parent "li" n'a pas l'id "here", on cache la balise "ul"
- * Si le parent "li" est cliqué, on vérifie si la balise "ul" est cachée ou non et on l'affiche ou on la cache en supprimant la classe active du parent "li"
- * Ainsi, "here" signifie qu'on est sur la page lié au bouton "li" et "active" signifie que le bouton "li" est cliqué
+ * Boucle sur les enfants de la balise "div" dans la sidebar:
+ * Si l'enfant est une balise "div", on ajoute un listener sur le parent "p" et on cache la balise "div"
+ * Si le parent "p" a l'id "here", on affiche la balise "div" et on ajoute la classe "active" au parent "p"
+ * Si le parent "p" n'a pas l'id "here", on cache la balise "div"
+ * Si le parent "p" est cliqué, on vérifie si la balise "div" est cachée ou non et on l'affiche ou on la cache en supprimant la classe active du parent "p"
+ * Ainsi, "here" signifie qu'on est sur la page lié au bouton "p" et "active" signifie que le bouton "p" est cliqué
  */
 
-for (let i = 0; i < firstUl.children.length; i++) {
-	let current = firstUl.children[i];
-	let FatherOfCurrent = firstUl.children[i - 1];
+for (let i = 0; i < firstDiv.children.length; i++) {
+	let current = firstDiv.children[i];
+	let FatherOfCurrent = firstDiv.children[i - 1];
 
-	//On vérifie si l'enfant est une balise "ul"
+	//On vérifie si l'enfant est une balise "div"
 	if (current.nodeName == 'DIV') {
-		//On vérifie si on se situe sur la page lié au bouton "li"
+		//On vérifie si on se situe sur la page lié au bouton "p"
 		if (FatherOfCurrent.id == 'here') {
 			current.style.display = 'block';
 			FatherOfCurrent.classList.add('sidebar--active');
 		} else {
 			current.style.display = 'none';
 		}
-		//On ajoute des listeners seulement sur les parents "li"
+		//On ajoute des listeners seulement sur les parents "p"
 		FatherOfCurrent.addEventListener('click', function () {
-			//On vérifie si la balise "ul" est cachée ou non
+			//On vérifie si la balise "div" est cachée ou non
 			if (current.style.display == 'none') {
-				//On supprime la classe "sidebar--active" de tous les parents "li" et on cache toutes les balises "ul" puis on affiche la balise "ul" du bouton "li" cliqué
-				for (let j = 0; j < firstUl.children.length; j++) {
-					firstUl.children[j].classList.remove('sidebar--active');
-					if (firstUl.children[j].nodeName == 'DIV') {
-						firstUl.children[j].style.display = 'none';
+				//On supprime la classe "sidebar--active" de tous les parents "p" et on cache toutes les balises "div" puis on affiche la balise "div" du bouton "p" cliqué
+				for (let j = 0; j < firstDiv.children.length; j++) {
+					firstDiv.children[j].classList.remove('sidebar--active');
+					if (firstDiv.children[j].nodeName == 'DIV') {
+						firstDiv.children[j].style.display = 'none';
 					}
 				}
 				FatherOfCurrent.classList.add('sidebar--active');
 				current.style.display = 'block';
 			}
-			//Si la balise "ul" était déjà affichée, on la cache et on supprime la classe "sidebar--active" du parent "li"
+			//Si la balise "div" était déjà affichée, on la cache et on supprime la classe "sidebar--active" du parent "p"
 			else {
 				FatherOfCurrent.classList.remove('sidebar--active');
 				current.style.display = 'none';
 			}
+			placeHere();
 		});
 	}
 }
+
+var here = document.createElement('div');
+/**
+ * Fonction qui place une div pour indiquer sur quelle page on se trouve selon l'emplacement de l'id "here"
+ */
+function placeHere() {
+	let numberHere = 0;
+	for (let i = 0; i < firstDiv.children.length; i++) {
+		let current = firstDiv.children[i];
+		if (current.id == 'here') {
+			numberHere++;
+			here.classList.add('here');
+			here.style.left = current.offsetLeft - 50 + 'px';
+			here.style.top = current.offsetTop + 'px';
+			document.body.appendChild(here);
+		}
+	}
+	if (numberHere != 1) {
+		here.style.display = 'none';
+		console.error('Il y a ' + numberHere + ' éléments avec l\'id "here"');
+	}
+}
+placeHere();
 
 /**
  * Gestion du menu burger
