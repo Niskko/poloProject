@@ -1,73 +1,146 @@
 var templateCard = document.querySelector('#card-0');
 var parentCard = document.querySelector('.card-Carrousel');
+var inputSearch = document.querySelector('.searching-menu input');
 var id = 1;
-for (data of dataPatient.patient) {
+
+inputSearch.addEventListener('keyup', function () {
+	displayCard();
+});
+displayCard();
+
+/**
+ * Affichage des cartes patients selon la recherche
+ */
+function displayCard() {
+	while (parentCard.children.length > 1) {
+		parentCard.children[1].remove();
+	}
+	for (data of dataPatient.patient) {
+		if (inputSearch.value != '' && inputSearch.value != null) {
+			let input = friendlyString(inputSearch.value.toLowerCase());
+			let firstName = friendlyString(data.firstName.toLowerCase());
+			let lastName = friendlyString(data.lastName.toLowerCase());
+			if (firstName.startsWith(input) || lastName.startsWith(input)) {
+				createCard(
+					data.firstName,
+					data.lastName,
+					data.avatar,
+					data.age,
+					data.phone,
+					data.email,
+					data.postalCode,
+					data.address,
+					data.city
+				);
+			}
+		} else {
+			createCard(
+				data.firstName,
+				data.lastName,
+				data.avatar,
+				data.age,
+				data.phone,
+				data.email,
+				data.postalCode,
+				data.address,
+				data.city
+			);
+		}
+	}
+}
+
+/**
+ * Création d'une carte patient
+ */
+function createCard(
+	firstName,
+	lastName,
+	avatar,
+	age,
+	phone,
+	email,
+	postalCode,
+	address,
+	city
+) {
 	let card = templateCard.cloneNode(true);
 	card.id = `card-${id}`;
 	parentCard.appendChild(card);
 
 	// Nom + Prénom
-	if (
-		data.firstName != null &&
-		data.firstName != undefined &&
-		data.firstName != '' &&
-		data.lastName != null &&
-		data.lastName != undefined &&
-		data.lastName != ''
-	) {
+	if (verifString(firstName) && verifString(lastName)) {
 		document.querySelector(
 			`#card-${id} #card-name`
-		).textContent = `${data.firstName} ${data.lastName}`;
+		).textContent = `${firstName} ${lastName}`;
 	}
 
 	// Avatar
-	if (data.avatar != null && data.avatar != undefined && data.avatar != '') {
-		document.querySelector(`#card-${id} #card-avatar`).src = data.avatar;
+	if (verifString(avatar)) {
+		document.querySelector(`#card-${id} #card-avatar`).src = avatar;
 	}
 
 	// Age
-	if (data.age != null && data.age != undefined && data.age != '') {
+	if (verifString(age)) {
 		document.querySelector(`#card-${id} #card-age`).textContent =
-			data.age + ' ans';
+			age + ' ans';
 	}
 
 	// Téléphone
-	if (data.phone != null && data.phone != undefined && data.phone != '') {
-		document.querySelector(`#card-${id} #card-phone`).textContent =
-			data.phone;
+	if (verifString(phone)) {
+		document.querySelector(`#card-${id} #card-phone`).textContent = phone;
 	}
 
 	// Email
-	if (data.email != null && data.email != undefined && data.email != '') {
-		document.querySelector(`#card-${id} #card-email`).textContent =
-			data.email;
+	if (verifString(email)) {
+		document.querySelector(`#card-${id} #card-email`).textContent = email;
 	}
 
 	// Code postal + Ville
-	if (
-		data.postalCode != null &&
-		data.postalCode != undefined &&
-		data.postalCode != '' &&
-		data.city != null &&
-		data.city != undefined &&
-		data.city != ''
-	) {
+	if (verifString(postalCode) && verifString(city)) {
 		document.querySelector(
 			`#card-${id} #card-city`
-		).textContent = `${data.postalCode} ${data.city}`;
+		).textContent = `${postalCode} ${city}`;
 	}
 
 	// Adresse
-	if (
-		data.address != null &&
-		data.address != undefined &&
-		data.address != ''
-	) {
+	if (verifString(address)) {
 		document.querySelector(`#card-${id} #card-address`).textContent =
-			data.address;
+			address;
 	}
-
 	id++;
 }
 
-//Todo: Barre de recherche avec prise en compte des accents
+/**
+ * Remplace les caractères spéciaux par des caractères normaux
+ * @returns une String sans caractères spéciaux
+ */
+function friendlyString(string) {
+	return string
+		.replaceAll('é', 'e')
+		.replaceAll('è', 'e')
+		.replaceAll('ê', 'e')
+		.replaceAll('ë', 'e')
+		.replaceAll('à', 'a')
+		.replaceAll('â', 'a')
+		.replaceAll('ä', 'a')
+		.replaceAll('î', 'i')
+		.replaceAll('ï', 'i')
+		.replaceAll('ô', 'o')
+		.replaceAll('ö', 'o')
+		.replaceAll('ù', 'u')
+		.replaceAll('û', 'u')
+		.replaceAll('ü', 'u')
+		.replaceAll('ç', 'c')
+		.replaceAll(' ', '');
+}
+
+/**
+ * Vérifie si une chaîne de caractère est vide ou nulle
+ * @returns un booléen
+ */
+function verifString(string) {
+	if (string != null && string != undefined && string != '') {
+		return true;
+	}
+	return false;
+}
